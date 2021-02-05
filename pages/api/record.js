@@ -1,6 +1,10 @@
 const VoiceResponse = require('twilio').twiml.VoiceResponse;
 
 export default (req, res) => {
+  console.log(req.headers);
+  console.log(req.query);
+  console.log(req.body);
+
   const twiml = new VoiceResponse();
 
   twiml.say({voice: 'alice'}, 'Please leave your name and phone number at the beep.');

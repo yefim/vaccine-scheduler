@@ -13,6 +13,7 @@ function hangup() {
 export default (req, res) => {
   const name = 'Yefim from Next';
   const number = req.body.From;
+  const recordingUrl = req.body.RecordingUrl;
 
   console.log('here we gooo');
   console.log(req.body);

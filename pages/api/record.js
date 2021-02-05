@@ -10,9 +10,10 @@ export default (req, res) => {
   twiml.say({voice: 'alice'}, 'Please leave your name and phone number at the beep.');
   // https://www.twilio.com/docs/voice/twiml/record
   twiml.record({
+    action: '/api/schedule',
     timeout: 0, // disable ending the record after X seconds of silence
-    transcribe: true,
-    transcribeCallback: '/api/schedule',
+    // transcribe: true,
+    // transcribeCallback: '/api/schedule',
     maxLength: 60, // seconds
     playBeep: true,
   });

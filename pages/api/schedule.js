@@ -3,16 +3,9 @@ const base = new Airtable({apiKey: process.env.AIRTABLE_API_KEY}).base('apphYdFM
 
 export default (req, res) => {
   const name = 'Yefim from Next';
-  const number = req.query.phonenumber;
+  const number = req.body.From;
 
   console.log('here we gooo');
-
-  if (!name || !number) {
-    res.status(200).send('no name or no number');
-    return;
-  }
-
-  console.log(req.query);
   console.log(req.body);
 
   base('People').create([
